@@ -9,6 +9,8 @@
  * @return {undefined}
  */
 module.exports = function(options, modified, total, next) {
+    //是否使用combo
+    var useCombo = options.combo ? options.combo : true;
     //combo的url的分隔符
     var comboUrlSplit = options.comboQuerySplit ? options.comboQuerySplit : '??';
     //combo的查询分隔符
@@ -36,9 +38,7 @@ module.exports = function(options, modified, total, next) {
             var isEntryFile = (~content.indexOf('/html') || ~content.indexOf('/HTML')) && (~content.indexOf('/head') || ~content.indexOf('/HEAD')) && (~content.indexOf('/body') || ~content.indexOf('/BODY'));
 
             //html入口文件(非-debug调试文件)才combo
-            if (/\.(html|ftl)/.test(file.rExt) && !/-debug$/.test(file.filename) && isEntryFile) {
-                
-
+            if (useCombo && /\.(html|ftl)/.test(file.rExt) && !/-debug$/.test(file.filename) && isEntryFile) {
                 content = content.replace(comboRegExp, function(comboContent) {
                     var comboTag = '';
                     var domain = '';
