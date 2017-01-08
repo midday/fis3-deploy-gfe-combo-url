@@ -1,0 +1,22 @@
+{
+    "name": "fis3-deploy-gfe-combo-url",
+    "version": "1.0.2",
+    "description": "对引用静态资源的url进行combo",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/midday/fis3-deploy-gfe-combo-url.git"
+    },
+    "keywords": [
+        "gfe",
+        "fis3",
+        "combo",
+        "url"
+    ],
+    "author": "midday",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/midday/fis3-deploy-gfe-combo-url/issues"
+    },
+    "homepage": "https://github.com/midday/fis3-deploy-gfe-combo-url#readme"
+}
