@@ -46,7 +46,7 @@ npm install [-g] fis3-deploy-gfe-combo-url
 ```js
 fis.match('**', {
     deploy: [
-        fis.plugin('gfe-combo-url'),//默认参数：comboQuerySplit='??',comboQuerySplit=',',如有需要请自行扩展
+        fis.plugin('gfe-combo-url'),//默认参数：comboQueryDelimiter='??',comboQueryDelimiter=',',如有需要请自行扩展
         fis.plugin('local-deliver') //must add a deliver, such as http-push, local-deliver
     ]
 });

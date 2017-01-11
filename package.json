@@ -1,6 +1,6 @@
 {
     "name": "fis3-deploy-gfe-combo-url",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "对引用静态资源的url进行combo",
     "main": "index.js",
     "repository": {

@@ -10,11 +10,11 @@
  */
 module.exports = function(options, modified, total, next) {
     //是否使用combo
-    var useCombo = options.combo ? options.combo : true;
+    var useCombo = options.combo || true;
     //combo的url的分隔符
-    var comboUrlSplit = options.comboQuerySplit ? options.comboQuerySplit : '??';
+    var comboUrlDelimiter = options.comboUrlDelimiter || '??';
     //combo的查询分隔符
-    var comboQuerySplit = options.comboQuerySplit ? options.comboQuerySplit : ',';
+    var comboQueryDelimiter = options.comboQueryDelimiter || ',';
     //combo内容正则表达式
     var comboRegExp = /<!--\s*gfe:combo:begin\s*-->((?!<!--\s*gfe:combo:end\s*-->)[\s\S])*<!--\s*gfe:combo:end\s*-->/gi;
     //link标签正则表达式
@@ -75,7 +75,7 @@ module.exports = function(options, modified, total, next) {
                     });
 
                     //如果domain为空，说明ssi为第一个，则不添加域名
-                    var comboUrl = domain + (domain !== '' ? comboUrlSplit : '') + pathArray.join(comboQuerySplit);
+                    var comboUrl = domain + (domain !== '' ? comboUrlDelimiter : '') + pathArray.join(comboQueryDelimiter);
                     comboTag = comboTag.replace('COMBO_URL', comboUrl);
 
                     return comboTag;
